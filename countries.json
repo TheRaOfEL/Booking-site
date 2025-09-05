@@ -1,0 +1,57 @@
+[
+  {"name": "Nigeria", "zip_code": "100001", "region": "Africa"},
+  {"name": "Egypt", "zip_code": "11511", "region": "Africa"},
+  {"name": "South Africa", "zip_code": "0002", "region": "Africa"},
+  {"name": "Kenya", "zip_code": "00100", "region": "Africa"},
+  {"name": "Ghana", "zip_code": "00233", "region": "Africa"},
+  {"name": "Morocco", "zip_code": "10000", "region": "Africa"},
+  {"name": "Ethiopia", "zip_code": "1000", "region": "Africa"},
+
+  {"name": "United States", "zip_code": "20500", "region": "North America"},
+  {"name": "Canada", "zip_code": "K1A 0A9", "region": "North America"},
+  {"name": "Mexico", "zip_code": "01000", "region": "North America"},
+  {"name": "Cuba", "zip_code": "10100", "region": "North America"},
+  {"name": "Jamaica", "zip_code": "JMACE05", "region": "North America"},
+
+  {"name": "Brazil", "zip_code": "01000-000", "region": "South America"},
+  {"name": "Argentina", "zip_code": "C1000", "region": "South America"},
+  {"name": "Chile", "zip_code": "8320000", "region": "South America"},
+  {"name": "Colombia", "zip_code": "110111", "region": "South America"},
+  {"name": "Peru", "zip_code": "15001", "region": "South America"},
+
+  {"name": "United Kingdom", "zip_code": "SW1A 1AA", "region": "Europe"},
+  {"name": "France", "zip_code": "75001", "region": "Europe"},
+  {"name": "Germany", "zip_code": "10115", "region": "Europe"},
+  {"name": "Italy", "zip_code": "00184", "region": "Europe"},
+  {"name": "Spain", "zip_code": "28001", "region": "Europe"},
+  {"name": "Netherlands", "zip_code": "1011", "region": "Europe"},
+  {"name": "Switzerland", "zip_code": "3000", "region": "Europe"},
+  {"name": "Sweden", "zip_code": "111 29", "region": "Europe"},
+  {"name": "Russia", "zip_code": "101000", "region": "Europe"},
+  {"name": "Poland", "zip_code": "00-001", "region": "Europe"},
+  {"name": "Greece", "zip_code": "105 52", "region": "Europe"},
+  {"name": "Portugal", "zip_code": "1100-001", "region": "Europe"},
+
+  {"name": "China", "zip_code": "100000", "region": "Asia"},
+  {"name": "India", "zip_code": "110001", "region": "Asia"},
+  {"name": "Japan", "zip_code": "100-0001", "region": "Asia"},
+  {"name": "South Korea", "zip_code": "04524", "region": "Asia"},
+  {"name": "Singapore", "zip_code": "018989", "region": "Asia"},
+  {"name": "Malaysia", "zip_code": "50000", "region": "Asia"},
+  {"name": "Indonesia", "zip_code": "10110", "region": "Asia"},
+  {"name": "Thailand", "zip_code": "10200", "region": "Asia"},
+  {"name": "Vietnam", "zip_code": "100000", "region": "Asia"},
+  {"name": "Philippines", "zip_code": "1000", "region": "Asia"},
+  {"name": "Pakistan", "zip_code": "44000", "region": "Asia"},
+  {"name": "Bangladesh", "zip_code": "1000", "region": "Asia"},
+
+  {"name": "United Arab Emirates", "zip_code": "00000", "region": "Middle East"},
+  {"name": "Saudi Arabia", "zip_code": "11564", "region": "Middle East"},
+  {"name": "Turkey", "zip_code": "34000", "region": "Middle East"},
+  {"name": "Israel", "zip_code": "91999", "region": "Middle East"},
+  {"name": "Qatar", "zip_code": "00000", "region": "Middle East"},
+
+  {"name": "Australia", "zip_code": "2000", "region": "Oceania"},
+  {"name": "New Zealand", "zip_code": "6011", "region": "Oceania"}
+]
+
