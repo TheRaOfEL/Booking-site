@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework',
     'api',
-    'bookings'
+    'bookings',
+    'profiles'
 ]
 
 MIDDLEWARE = [
