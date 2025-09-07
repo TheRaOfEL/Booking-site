@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.utils import timezone
 from django.contrib.auth.models import User
 from .models import Country, TravelBooking
+from django.utils.html import strip_tags
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -14,6 +15,21 @@ class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
         fields = ["id", "name", "region", "zip_code", "price"]
+
+    # removes scripts/HTML and whitespace
+    def validate_name(self, value):
+        clean_value = strip_tags(value).strip()
+        if not clean_value.replace(" ", "").isalpha():
+            raise serializers.ValidationError("Country name should only contain letters and spaces.")
+        return clean_value
+
+    def validate_region(self, value):
+        return strip_tags(value).strip()
+
+    def validate_zip_code(self, value):
+        if not value.isdigit():
+            raise serializers.ValidationError("Zip code must only contain digits.")
+        return value
 
 
 class TravelBookingSerializer(serializers.ModelSerializer):

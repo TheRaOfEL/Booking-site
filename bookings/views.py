@@ -6,13 +6,13 @@ from rest_framework import status
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from django.contrib.auth.models import User
+from .permissions import IsOwner, IsAdminOrReadOnly
 
 
 class CountryViewSet(viewsets.ModelViewSet):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
-    permission_classes = [permissions.AllowAny]  # allow all users to see countires
-
+    permission_classes = [IsAdminOrReadOnly] # only admins can edit countries
 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['region', 'price']
@@ -20,10 +20,10 @@ class CountryViewSet(viewsets.ModelViewSet):
     ordering_fields = ['price', 'name']
 
 
-
 class TravelBookingViewSet(viewsets.ModelViewSet):
     queryset = TravelBooking.objects.all()
     serializer_class = TravelBookingSerializer
+    permission_classes = [permissions.IsAuthenticated, IsOwner]
 
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     filterset_fields = ['status', 'destination__region', 'destination__name']  # filter by status or country
@@ -31,16 +31,10 @@ class TravelBookingViewSet(viewsets.ModelViewSet):
     ordering_fields = ['travel_date', 'travel_time', 'destination__price']
 
     def get_queryset(self):
-        user = self.request.user
-        if user.is_authenticated:
-            return TravelBooking.objects.filter(user=user)
-        return TravelBooking.objects.all()  # fallback for no auth
+        return TravelBooking.objects.filter(user=self.request.user)  # shows only bookings of logged in user
 
     def perform_create(self, serializer):
-        user = self.request.user
-        if not user.is_authenticated:
-            user, _ = User.objects.get_or_create(username="testuser") # create a dummy user
-        serializer.save(user=user)
+        serializer.save(user=self.request.user)  # create booking for current user
 
     @action(detail=True, methods=["post"])
     def cancel(self, request, pk=None):
